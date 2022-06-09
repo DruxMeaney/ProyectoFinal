@@ -1,0 +1,33 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block inicio %} 
+<a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+{% endblock %}
+
+
+
+
+{% block pagina %}
+
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-heading">
+                <h1>Aquí verás los <em>eventos</em> programados.</h1>
+                <p>Eventos según el calendario del año 2022</p>
+            </div>
+        </div>
+    </div>
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="ENVIAR">
+
+</form>
+
+
+
+</section>
+{% endblock %}

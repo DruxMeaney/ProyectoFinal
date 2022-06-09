@@ -1,0 +1,31 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block inicio %} 
+<a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+{% endblock %}
+
+
+
+
+{% block pagina %}
+
+<section id="featured" class="content-section">
+    <div class="section-heading">
+        <h1>Directorios<br><em>de Laboratorios</em></h1>
+        <p>Laboratorios en la Escuela Superior de Medicna 
+        <br>del Instituto Politécnico Nacional</p>
+
+    </div>
+
+    <p>NOMBRE: <i>{{laboratorio.nombre}}</i></p>
+    <p>DESCRIPCIÓN : <i>{{laboratorio.descripción}}</i></p>
+    <p>FOTO : <i>{{laboratorio.foto}}</i></p>
+
+    <p>
+        <a href="{% url 'laboratorio_listar' %}">REGRESAR</a>
+    </p>
+
+</section>
+{% endblock %}

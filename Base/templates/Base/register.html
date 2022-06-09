@@ -1,0 +1,28 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+
+{% block inicio %} 
+<a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+{% endblock %}
+
+
+
+{% block pagina %}
+
+<section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>Para<br><em>Registrarte</em></h1>
+        <p>Por favor introduce <br>El nombre de usario y que quieras y la contraseña. </p>
+    </div>
+
+<form action='' method="post">{% csrf_token %}
+    {{formulario.as_p}}
+    <button type="submit">REGISTRO</button>
+
+</form>
+
+{{mensaje}}
+{% endblock %}
+

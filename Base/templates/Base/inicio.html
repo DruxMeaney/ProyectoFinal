@@ -1,0 +1,260 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+
+
+{% block slider %} 
+<div class="slider">
+    <div class="Modern-Slider content-section" id="inicio">
+        <!-- Item -->
+        <div class="item item-1">
+            <div class="img-fill">
+            <div class="image"></div>
+            <div class="info">
+                <div>
+                    <FONT COLOR="black"><h1>¿Quieres formar<br>parte de la comunidad?</h1>
+                  <p>Da click en el boton de abajo para registarte.<br>
+                      Y comienza a convivir y a contarnos en qué trabajas.</p></FONT>
+                  <div class="white-button button">
+                      <a href="{% url 'register' %}">Registrarte</a>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- // Item -->
+        <!-- Item -->
+        <div class="item item-2">
+            <div class="img-fill">
+                <div class="image"></div>
+                <div class="info">
+                <div>
+                  <h1>Publica en el blog los más reciente<br>avances de tu investigación.</h1>
+                  <p>Da click en el boton de abajo para registarte.<br>
+                    Y comienza a convivir y a contarnos en qué trabajas.</p>
+                  
+                  <div class="white-button button">
+                    <a href="{% url 'register' %}">Registrarte</a>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- // Item -->
+        <!-- Item -->
+        <div class="item item-3">
+            <div class="img-fill">
+                <div class="image"></div>
+                <div class="info">
+                <div>
+                  <h1>Entérate qué están haciendo los <br>otros laboratorios de la ESM</h1>
+                  <p>Da click en el boton de abajo para registarte.<br>
+                    Y comienza a convivir y a contarnos en qué trabajas.</p>
+                  <div class="white-button button">
+                    <a href="{% url 'register' %}">Registrarte</a>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- // Item -->
+    </div>
+</div>
+{% endblock %}
+
+{% block barraNavegadora %} 
+
+<nav>
+    <ul>
+        <li>
+
+
+        </li>
+        <li>
+            <a href="#inicio">
+                <span class="rect"></span>
+                <span class="circle"></span>
+                Inicio
+            </a>
+        </li>
+        <li>
+            <a href="#featured">
+                <span class="rect"></span>
+                <span class="circle"></span>
+                Directorio de Laboratorios
+            </a>
+        </li>
+        <li>
+            <a href="#projects">
+                <span class="rect"></span>
+                <span class="circle"></span>
+                Líneas de Investigación
+            </a>
+        </li>
+        <li>
+            <a href="#video">
+                <span class="rect"></span>
+                <span class="circle"></span>
+                Eventos
+            </a>
+        </li>
+        <li>
+            <a href="#blog">
+                <span class="rect"></span>
+                <span class="circle"></span>
+                Blogbook
+            </a>
+        </li>
+        <li>
+            <a href="#contact">
+                <span class="rect"></span>
+                <span class="circle"></span>
+                Contáctanos
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %} 
+
+{% block pagina %}
+
+<section id="mensaje" class="content-section"></section>
+    <div class="section-heading">
+        <h1>{{mensaje}}</h1>
+    </div>
+</section>
+
+<section id="featured" class="content-section">
+
+    <div class="section-heading">
+
+        <h1>Directorios<br><em>de Laboratorios</em></h1>
+        <p>Laboratorios en la Escuela Superior de Medicna 
+        <br>del Instituto Politécnico Nacional</p>
+
+    </div>
+    <p>
+        <a href="{% url 'laboratorio_crear' %}"><button>AÑADIR</button></a>
+    </p>
+    <div class="white-button button">
+        <a href="{% url 'laboratorio_listar' %}">Ver Laboratorios</a>
+    </div>
+    
+
+<section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>Líneas<br><em>de Investigación</em></h1>
+        <p>Investigaciones desarrolladas 
+        <br>por diversos laboratorios.</p>
+    </div>
+
+    <p>
+        <a href="{% url 'investigacion_crear' %}"><button>AÑADIR</button></a>
+    </p>
+    <div class="white-button button">
+        <a href="{% url 'investigacion_listar' %}">Ver Investigaciones</a>
+    </div>
+         
+</section>
+<section id="video" class="content-section">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-heading">
+                <h1>Aquí verás los <em>eventos</em> programados.</h1>
+                <p>Eventos según el calendario del año 2022</p>
+            </div>
+        </div>
+    </div>
+
+
+    <p>
+        <a href="{% url 'evento_crear' %}"><button>AÑADIR</button></a>
+    </p>
+    <div class="white-button button">
+        <a href="{% url 'evento_listar' %}">Ver Eventos</a>
+      </div>
+
+</section>
+<section id="blog" class="content-section">
+    <div class="row"></div>
+        <div class="col-md-12"></div>
+            <div class="section-heading">
+                <h1>Entradas<br><em>de Blog</em></h1>
+                <p>¿Quieres colaborar con algún equipo? ¿Necesitas un reactivo en esepecial? ¿Conoces qué congreso
+                <br>le podría interesar a la comunidad? Aquí puedes dejar por escrito todo lo que se te venga a la mente.</p>
+            
+                <div class="white-button button">
+                    <a href="{% url 'blog_listar' %}">Ver Blog</a>
+                </div>
+                <li>
+                <div class="item">
+                    <a href="{% url 'blog_crear' %}"><button>AÑADIR</button></a>
+                </div>
+                </li>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="contact" class="content-section">
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1881.0534665973296!2d-99.16781303558197!3d19.450955883492426!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fa3d53b35365%3A0xe99567abf0cf6946!2sESM%20-%20Escuela%20Superior%20de%20Medicina%20-%20IPN!5e0!3m2!1ses-419!2smx!4v1653428428517!5m2!1ses-419!2smx" width="100%" height="400px" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+        </div>
+        <div id="contact-content">
+            <div class="section-heading">
+                <h1>Nos puedes <br><em>Contactar aquí</em></h1>
+                <p>Deja tu mensaje. 
+                <br>Nos pondremos en contacto contigo.</p>
+            </div>
+            <div class="section-content">
+                <div class="section-content">
+                    <form id="contact" action="/Base/contacto/" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-4">
+                              <fieldset>
+                                <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre" required="">{{formulario.nombre}}
+                              </fieldset>
+                            </div>
+                            <div class="col-md-4">
+                              <fieldset>
+                                <input name="correo" type="email" class="form-control" id="correo" placeholder="Escribe tu correo" required="">{{formulario.correo}}
+                              </fieldset>
+                            </div>
+                             <div class="col-md-4">
+                              <fieldset>
+                                <input name="asunto" type="text" class="form-control" id="asunto" placeholder="Escribe el asunto" required="">{{formulario.asunto}}
+                              </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                              <fieldset>
+                                <textarea name="mensaje" rows="6" class="form-control" id="mensaje" placeholder="Deja tu mensaje" required=""></textarea>{{formulario.mensaje}}
+                              </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="btn">Enviar mensaje</button>
+                              </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>>
+        </section>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <p>Copyright &copy; 2022 Company Name 
+        
+        . Design: Mikel&Drux</p>
+    </section>
+{% endblock %}
+
+
+
+
+

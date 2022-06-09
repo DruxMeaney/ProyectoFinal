@@ -1,0 +1,29 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+
+{% block inicio %} 
+<a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+{% endblock %}
+
+
+
+{% block pagina %}
+
+<section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>Líneas<br><em>de Investigación</em></h1>
+        <p>Investigaciones desarrolladas 
+        <br>por diversos laboratorios.</p>
+    </div>
+
+    <form method="post">{% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="ENVIAR">
+
+    </form>
+
+
+</section>
+{% endblock %}

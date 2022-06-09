@@ -1,0 +1,24 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+
+{% block inicio %} 
+<a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+{% endblock %}
+
+
+
+
+{% block pagina %}
+
+<section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>Haz<br><em>salido de la sesión</em></h1>
+        <p>Vuelve pronto </p>
+    </div>
+    <h1>{{mensaje}}</h1>
+</section>
+
+{% endblock %}
+

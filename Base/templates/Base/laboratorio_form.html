@@ -1,0 +1,28 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+
+
+{% block inicio %} 
+<a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+{% endblock %}
+
+{% block pagina %}
+<section id="featured" class="content-section">
+    <div class="section-heading">
+        <h1>Directorios<br><em>de Laboratorios</em></h1>
+        <p>Laboratorios en la Escuela Superior de Medicna 
+        <br>del Instituto Politécnico Nacional</p>
+
+    </div>
+
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="ENVIAR">
+
+    </form>
+
+
+</section>
+{% endblock %}

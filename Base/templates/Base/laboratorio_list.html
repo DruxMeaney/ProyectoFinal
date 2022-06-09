@@ -1,0 +1,58 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+
+
+{% block inicio %} 
+<a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+{% endblock %}
+
+
+
+{% block pagina %}
+
+
+<section id="featured" class="content-section">
+    <div class="section-heading">
+        <h1>Directorios<br><em>de Laboratorios</em></h1>
+        <p>Laboratorios en la Escuela Superior de Medicna 
+        <br>del Instituto Politécnico Nacional</p>
+
+    </div>
+
+    {% for laboratorio in object_list %}
+
+
+    <li>{{laboratorio}}</li>
+
+        <a href="{% url 'laboratorio_detalle' laboratorio.id %}"><button>DETALLE</button></a>
+        <a href="{% url 'laboratorio_editar' laboratorio.id %}"><button>EDITAR</button></a>
+        <a href="{% url 'laboratorio_borrar' laboratorio.id %}"><button>BORRAR</button></a>
+
+        <div class="section-content">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="image">
+                        <img src={{laboratorio.foto.url}} alt="">
+                        <div class="featured-button button">
+                            <a href="#projects">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <h4>{{laboratorio.nombre}}</h4>
+                        <span></span>
+                        <p>{{laboratorio.descripción}}</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+    {% endfor %}
+
+    <p>
+        <a href="{% url 'laboratorio_crear' %}"><button>AÑADIR</button></a>
+    </p>
+</section>
+
+{% endblock %}
